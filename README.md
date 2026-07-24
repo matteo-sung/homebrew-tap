@@ -12,6 +12,9 @@ explain any lockfile change before you merge it.
 brew install matteo-sung/tap/lockvet
 ```
 
+Recent Homebrew versions ask you to trust third-party taps on first use —
+confirm the prompt, or run `brew trust matteo-sung/tap` first.
+
 Or:
 
 ```sh
