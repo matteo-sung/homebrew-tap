@@ -58,6 +58,12 @@ class Lockvet < Formula
 
   def install
     bin.install "lockvet"
+    if (buildpath/"completions").exist?
+      bash_completion.install "completions/lockvet.bash"
+      zsh_completion.install "completions/_lockvet"
+      fish_completion.install "completions/lockvet.fish"
+      man1.install "man/lockvet.1"
+    end
   end
 
   test do

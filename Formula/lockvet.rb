@@ -6,31 +6,37 @@
 class Lockvet < Formula
   desc "Explain any lockfile change: bumps, vulns, release ages, deprecations"
   homepage "https://github.com/matteo-sung/lockvet"
-  version "0.2.3"
+  version "0.2.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/matteo-sung/lockvet/releases/download/v0.2.3/lockvet_v0.2.3_darwin_arm64.tar.gz"
-      sha256 "acc4e30cd2b3a1a8942d463bae2f30fbbe4d202f131c494afb4dc27078d7c1a7"
+      url "https://github.com/matteo-sung/lockvet/releases/download/v0.2.4/lockvet_v0.2.4_darwin_arm64.tar.gz"
+      sha256 "e7304a4e026a5d6c4a21b2635336f60b35a260618076abdca4f13600a3d0c717"
     else
-      url "https://github.com/matteo-sung/lockvet/releases/download/v0.2.3/lockvet_v0.2.3_darwin_amd64.tar.gz"
-      sha256 "0ef1c82ea2c9e64f873103d3470e7effef083b1205d1a9e543a0f341dbbb532e"
+      url "https://github.com/matteo-sung/lockvet/releases/download/v0.2.4/lockvet_v0.2.4_darwin_amd64.tar.gz"
+      sha256 "37886c2bdb8779e915090c5f9633375014838c07dc95a5e4cdbab9a27c833a54"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/matteo-sung/lockvet/releases/download/v0.2.3/lockvet_v0.2.3_linux_arm64.tar.gz"
-      sha256 "29e098431fcf5ecdf4de37408c69dcde84644ba5fe85bbb45efc41dfe63e02ef"
+      url "https://github.com/matteo-sung/lockvet/releases/download/v0.2.4/lockvet_v0.2.4_linux_arm64.tar.gz"
+      sha256 "2274ea92a9fad02681c4ed164797808f9a8de84bb180d658cfefc103c655409e"
     else
-      url "https://github.com/matteo-sung/lockvet/releases/download/v0.2.3/lockvet_v0.2.3_linux_amd64.tar.gz"
-      sha256 "d713dee3a4875a7b21e7b3aeab192c1482611fafdca5595280ebb6cf3426f75c"
+      url "https://github.com/matteo-sung/lockvet/releases/download/v0.2.4/lockvet_v0.2.4_linux_amd64.tar.gz"
+      sha256 "f4748ae53bda3744e6108612710917419f5e5d214f6dd3fcf31b91c5a958126e"
     end
   end
 
   def install
     bin.install "lockvet"
+    if (buildpath/"completions").exist?
+      bash_completion.install "completions/lockvet.bash"
+      zsh_completion.install "completions/_lockvet"
+      fish_completion.install "completions/lockvet.fish"
+      man1.install "man/lockvet.1"
+    end
   end
 
   test do
