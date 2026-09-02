@@ -6,26 +6,26 @@
 class Lockvet < Formula
   desc "Explain any lockfile change: bumps, vulns, release ages, deprecations"
   homepage "https://github.com/matteo-sung/lockvet"
-  version "0.6.13"
+  version "0.6.14"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/matteo-sung/lockvet/releases/download/v0.6.13/lockvet_v0.6.13_darwin_arm64.tar.gz"
-      sha256 "82072e473404099ae6b0f1efd49b9d401a1bf21ae79e13234952a96dc2987973"
+      url "https://github.com/matteo-sung/lockvet/releases/download/v0.6.14/lockvet_v0.6.14_darwin_arm64.tar.gz"
+      sha256 "d89aedec843bbf24d50a4dc44b18ccceb8797f74492809bf5ebdf8055b39030b"
     else
-      url "https://github.com/matteo-sung/lockvet/releases/download/v0.6.13/lockvet_v0.6.13_darwin_amd64.tar.gz"
-      sha256 "26118aeaf9383809229039ab2ecd0ede4c74771ff2976ea3e6a5d1c47f2d9caf"
+      url "https://github.com/matteo-sung/lockvet/releases/download/v0.6.14/lockvet_v0.6.14_darwin_amd64.tar.gz"
+      sha256 "b6db30367dbccb89987cd2c911da2a40afb612ebba7aee20d3e80bfb74652386"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/matteo-sung/lockvet/releases/download/v0.6.13/lockvet_v0.6.13_linux_arm64.tar.gz"
-      sha256 "12a1485610ad36b7f4d9e4ea6ec6389708fbb110de2d830a9839e0e781ebadb1"
+      url "https://github.com/matteo-sung/lockvet/releases/download/v0.6.14/lockvet_v0.6.14_linux_arm64.tar.gz"
+      sha256 "6350448d15c9e935ec30c0bad362f9417109b2d062cf2acb451e395d1ca21eb9"
     else
-      url "https://github.com/matteo-sung/lockvet/releases/download/v0.6.13/lockvet_v0.6.13_linux_amd64.tar.gz"
-      sha256 "168feb4afa34109928b318769347f5d60fdc4f1eef7c6c4e4f381c96f2175fc6"
+      url "https://github.com/matteo-sung/lockvet/releases/download/v0.6.14/lockvet_v0.6.14_linux_amd64.tar.gz"
+      sha256 "588b23236232b870e602b4eca51dc25cd53eb7479da362309f8f00d41e232335"
     end
   end
 
